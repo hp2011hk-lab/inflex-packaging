@@ -1,4 +1,7 @@
 name: Fallback Deploy to gh-pages
+permissions:
+  contents: write
+  pages: write
 on:
   push:
     branches: [ main ]
