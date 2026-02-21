@@ -1,0 +1,49 @@
+name: Deploy to S3
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Ensure S3 bucket exists
+        run: |
+          set -e
+          if aws s3api head-bucket --bucket "$AWS_S3_BUCKET" 2>/dev/null; then
+            echo "Bucket exists: $AWS_S3_BUCKET"
+          else
+            echo "Creating bucket: $AWS_S3_BUCKET"
+            if [ "$AWS_REGION" = "us-east-1" ]; then
+              aws s3api create-bucket --bucket "$AWS_S3_BUCKET"
+            else
+              aws s3api create-bucket --bucket "$AWS_S3_BUCKET" --create-bucket-configuration LocationConstraint=$AWS_REGION
+            fi
+            aws s3api put-bucket-acl --bucket "$AWS_S3_BUCKET" --acl public-read || true
+          fi
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+
+      - name: Sync to S3
+        run: |
+          aws s3 sync . s3://$AWS_S3_BUCKET --exclude ".git/*" --delete --acl public-read
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+
+      - name: (Optional) Invalidate CloudFront
+        if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID != '' }}
+        run: |
+          aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+        env:
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
