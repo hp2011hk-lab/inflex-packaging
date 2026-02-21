@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inflex Packaging Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+* {
+  margin: 0;
+    padding: 0;
+      box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Open Sans', sans-serif;
+          color: #333;
+            line-height: 1.6;
+            }
+
+            h1, h2, h3 {
+              font-family: 'Montserrat', sans-serif;
+              }
+
+              .container {
+                width: 90%;
+                  max-width: 1100px;
+                    margin: auto;
+                    }
+
+                    /* NAVBAR */
+
+                    nav {
+                      position: sticky;
+                        top: 0;
+                          background: white;
+                            padding: 15px 0;
+                              box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+                                z-index: 1000;
+                                }
+
+                                .nav-content {
+                                  display: flex;
+                                    justify-content: space-between;
+                                      align-items: center;
+                                      }
+
+                                      nav ul {
+                                        list-style: none;
+                                          display: flex;
+                                            gap: 25px;
+                                            }
+
+                                            nav a {
+                                              text-decoration: none;
+                                                color: #333;
+                                                  font-weight: 600;
+                                                  }
+
+                                                  /* HERO */
+
+                                                  .hero {
+                                                    height: 90vh;
+                                                      display: flex;
+                                                        align-items: center;
+                                                          background: linear-gradient(135deg, #e6f5f1, #f4f8fb);
+                                                          }
+
+                                                          .hero-content {
+                                                            display: flex;
+                                                              justify-content: space-between;
+                                                                align-items: center;
+                                                                  gap: 40px;
+                                                                  }
+
+                                                                  .hero-text {
+                                                                    flex: 1;
+                                                                    }
+
+                                                                    .hero h1 {
+                                                                      font-size: 40px;
+                                                                        margin-bottom: 20px;
+                                                                        }
+
+                                                                        .hero p {
+                                                                          margin-bottom: 25px;
+                                                                            font-size: 18px;
+                                                                            }
+
+                                                                            .btn {
+                                                                              display: inline-block;
+                                                                                padding: 12px 22px;
+                                                                                  background: #0077b6;
+                                                                                    color: white;
+                                                                                      text-decoration: none;
+                                                                                        border-radius: 6px;
+                                                                                          font-weight: 600;
+                                                                                          }
+
+                                                                                          .hero-visual {
+                                                                                            flex: 1;
+                                                                                              text-align: center;
+                                                                                                font-size: 120px;
+                                                                                                  color: #00a896;
+                                                                                                  }
+
+                                                                                                  /* SECTION */
+
+                                                                                                  section {
+                                                                                                    padding: 80px 0;
+                                                                                                    }
+
+                                                                                                    .section-light {
+                                                                                                      background: #f7f9fb;
+                                                                                                      }
+
+                                                                                                      /* SERVICES */
+
+                                                                                                      .services-grid {
+                                                                                                        display: grid;
+                                                                                                          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                                                                                                            gap: 25px;
+                                                                                                              margin-top: 40px;
+                                                                                                              }
+
+                                                                                                              .service-card {
+                                                                                                                background: white;
+                                                                                                                  padding: 25px;
+                                                                                                                    border-radius: 10px;
+                                                                                                                      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+                                                                                                                      }
+
+                                                                                                                      .service-card h3 {
+                                                                                                                        margin-bottom: 10px;
+                                                                                                                        }
+
+                                                                                                                        /* APPROACH */
+
+                                                                                                                        .approach-steps {
+                                                                                                                          display: flex;
+                                                                                                                            flex-wrap: wrap;
+                                                                                                                              gap: 20px;
+                                                                                                                                margin-top: 40px;
+                                                                                                                                }
+
+                                                                                                                                .step {
+                                                                                                                                  flex: 1 1 180px;
+                                                                                                                                    text-align: center;
+                                                                                                                                      padding: 20px;
+                                                                                                                                        border: 1px solid #e0e0e0;
+                                                                                                                                          border-radius: 8px;
+                                                                                                                                          }
+
+                                                                                                                                          /* CTA SECTION */
+
+                                                                                                                                          .cta {
+                                                                                                                                            background: linear-gradient(135deg, #0077b6, #00a896);
+                                                                                                                                              color: white;
+                                                                                                                                                text-align: center;
+                                                                                                                                                }
+
+                                                                                                                                                .cta a {
+                                                                                                                                                  background: white;
+                                                                                                                                                    color: #0077b6;
+                                                                                                                                                      margin-top: 20px;
+                                                                                                                                                      }
+
+                                                                                                                                                      /* FOOTER */
+
+                                                                                                                                                      footer {
+                                                                                                                                                        text-align: center;
+                                                                                                                                                          padding: 20px 0;
+                                                                                                                                                            font-size: 14px;
+                                                                                                                                                              color: #777;
+                                                                                                                                                              }
+
+                                                                                                                                                              @media(max-width: 768px) {
+                                                                                                                                                                .hero-content {
+                                                                                                                                                                    flex-direction: column;
+                                                                                                                                                                        text-align: center;
+                                                                                                                                                                          }
+                                                                                                                                                                            .hero h1 {
+                                                                                                                                                                                font-size: 30px;
+                                                                                                                                                                                  }
+                                                                                                                                                                                  }
+
+                                                                                                                                                                                  </style>
+                                                                                                                                                                                  </head>
+                                                                                                                                                                                  <body>
+
+                                                                                                                                                                                  <nav>
+                                                                                                                                                                                    <div class="container nav-content">
+                                                                                                                                                                                        <h3>Inflex Packaging Solutions</h3>
+                                                                                                                                                                                            <ul>
+                                                                                                                                                                                                  <li><a href="#">Home</a></li>
+                                                                                                                                                                                                        <li><a href="#about">About</a></li>
+                                                                                                                                                                                                              <li><a href="#services">Services</a></li>
+                                                                                                                                                                                                                    <li><a href="#approach">Approach</a></li>
+                                                                                                                                                                                                                          <li><a href="#contact">Contact</a></li>
+                                                                                                                                                                                                                              </ul>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                </nav>
+
+                                                                                                                                                                                                                                <section class="hero">
+                                                                                                                                                                                                                                  <div class="container hero-content">
+                                                                                                                                                                                                                                      <div class="hero-text">
+                                                                                                                                                                                                                                            <h1>Strategic Flexible Packaging Advisory</h1>
+                                                                                                                                                                                                                                                  <p>Cost Optimization • Structure Development • Sustainability Transition • Risk Mitigation</p>
+                                                                                                                                                                                                                                                        <a href="#contact" class="btn">Schedule a Consultation</a>
+                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                <div class="hero-visual">⬆</div>
+                                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                  </section>
+
+                                                                                                                                                                                                                                                                  <section id="about">
+                                                                                                                                                                                                                                                                    <div class="container">
+                                                                                                                                                                                                                                                                        <h2>22 Years of Expertise in Flexible Packaging</h2>
+                                                                                                                                                                                                                                                                            <p style="margin-top:20px;">
+                                                                                                                                                                                                                                                                                  With over two decades of hands-on experience in flexible packaging R&D and leadership roles,
+                                                                                                                                                                                                                                                                                        Inflex Packaging Solutions partners with Food & FMCG companies to optimize packaging
+                                                                                                                                                                                                                                                                                              performance, reduce cost structures, and transition toward sustainable materials.
+                                                                                                                                                                                                                                                                                                  </p>
+                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                    </section>
+
+                                                                                                                                                                                                                                                                                                    <section id="services" class="section-light">
+                                                                                                                                                                                                                                                                                                      <div class="container">
+                                                                                                                                                                                                                                                                                                          <h2>Our Core Advisory Services</h2>
+                                                                                                                                                                                                                                                                                                              <div class="services-grid">
+                                                                                                                                                                                                                                                                                                                    <div class="service-card">
+                                                                                                                                                                                                                                                                                                                            <h3>Cost Optimization</h3>
+                                                                                                                                                                                                                                                                                                                                    <p>Structure rationalization, vendor benchmarking, yield improvement.</p>
+                                                                                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                                                                                <div class="service-card">
+                                                                                                                                                                                                                                                                                                                                                        <h3>Structure Development</h3>
+                                                                                                                                                                                                                                                                                                                                                                <p>Laminate redesign, seal layer optimization, line compatibility.</p>
+                                                                                                                                                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                                                                                                                                                            <div class="service-card">
+                                                                                                                                                                                                                                                                                                                                                                                    <h3>Sustainability Transition</h3>
+                                                                                                                                                                                                                                                                                                                                                                                            <p>Mono-material conversion, lightweighting, PCR integration.</p>
+                                                                                                                                                                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                                                                                                                                                        <div class="service-card">
+                                                                                                                                                                                                                                                                                                                                                                                                                <h3>Strategic Advisory</h3>
+                                                                                                                                                                                                                                                                                                                                                                                                                        <p>Annual reviews, technology roadmap, packaging strategy.</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                    </section>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                    <section id="approach">
+                                                                                                                                                                                                                                                                                                                                                                                                                                      <div class="container">
+                                                                                                                                                                                                                                                                                                                                                                                                                                          <h2>Our Proven Approach</h2>
+                                                                                                                                                                                                                                                                                                                                                                                                                                              <div class="approach-steps">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="step">1. Diagnostic Review</div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div class="step">2. Gap & Cost Analysis</div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="step">3. Technical Recommendation</div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <div class="step">4. Trial & Validation</div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="step">5. Implementation & Monitoring</div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </section>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <section id="contact" class="cta">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="container">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <h2>Let’s Optimize Your Packaging</h2>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <p style="margin-top:15px;">Available for advisory assignments across India & international markets.</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="mailto:your@email.com" class="btn">Schedule Your Consultation</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </section>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <footer>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    © 2026 Inflex Packaging Solutions | Privacy Policy | Terms of Use
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </footer>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </body>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </html>
